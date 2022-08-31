@@ -1,4 +1,4 @@
-# AxeFx Ultra MIDI Patch Change
+# AxeFx Virtual MIDI Pedalboard
 
 ![](https://drops.ricardoalcocer.com/drops/axe-fx-virutal-midi-pedalboard-screenshot-jeijM65Ytg.png)
 
