@@ -1,0 +1,25 @@
+<meta charset="UTF-8">
+<title>AxeFx Patches</title>
+
+<!-- CSS (load bootstrap from a CDN) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<style>
+    body { 
+        background-color: rgb(11, 11, 11);
+        padding: 25px;
+        height: 100%"
+    }
+</style>
+<script>
+    function change_patch(patch_id) {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                //document.getElementById("demo").innerHTML = this.responseText;
+            }
+        };
+        xhttp.open("GET", "/change/" + patch_id, true);
+        xhttp.send();
+    }
+</script>

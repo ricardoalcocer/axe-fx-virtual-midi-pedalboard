@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('../partials/head'); %>
+        <meta name="viewport" content="width=500, initial-scale=1">
+    </head>
+    
+    <body >
+        <header>
+            <%- include('../partials/header'); %>
+        </header>
+
+        <main>
+            <div class="">
+        <%
+            // TODO: Save this in https://www.npmjs.com/package/keyv
+            let patches = {
+                "clean"   : [
+                    {
+                        "code"          : "326",
+                        "description"   : "Sqweeky Clean"
+                    },
+                    {
+                        "code"          : "302",
+                        "description"   : "Forty Miles"
+                    },
+                    {
+                        "code"          : "015",
+                        "description"   : "People get ready"
+                    },
+                    {
+                        "code"          : "027",
+                        "description"   : "Sultans"
+                    }
+                ],
+                "crunch"  : [
+                    {
+                        "code"          : "033",
+                        "description"   : "Brit Crunch"
+                    },
+                    {
+                        "code"          : "094",
+                        "description"   : "USA Crunch"
+                    },
+                    {
+                        "code"          : "028",
+                        "description"   : "Early Carlos"
+                    },
+                    {
+                        "code"          : "053",
+                        "description"   : "Limelight"
+                    }
+                ],
+                "lead"    : [
+                    {
+                        "code"          : "014",
+                        "description"   : "Screaming Plexi"
+                    },
+                    {
+                        "code"          : "297",
+                        "description"   : "Mr. Gilmore Lead"
+                    },
+                    {
+                        "code"          : "298",
+                        "description"   : "Stratified"
+                    },
+                    {
+                        "code"          : "017",
+                        "description"   : "Cliff\'s of Dover"
+                    },
+                    {
+                        "code"          : "036",
+                        "description"   : "Fat Solo Lead"
+                    },
+                    {
+                        "code"          : "056",
+                        "description"   : "Mark IV Lead"
+                    },
+                    {
+                        "code"          : "072",
+                        "description"   : "Thick Cali Lead"
+                    }
+                ],
+                "wah"     : [
+                    {
+                        "code"          : "065",
+                        "description"   : "Power Wah"
+                    },
+                    {
+                        "code"          : "086",
+                        "description"   : "Touch Wah Boogie"
+                    },
+                    {
+                        "code"          : "095",
+                        "description"   : "Voodoo Chile"
+                    },
+                    {
+                        "code"          : "114",
+                        "description"   : "Seek Wah"
+                    }
+                ],
+                "other"   : [
+                    {
+                        "code"          : "007",
+                        "description"   : "The Brown Sound"
+                    },
+                    {
+                        "code"          : "026",
+                        "description"   : "Arpeggiator Madness"
+                    },
+                    {
+                        "code"          : "061",
+                        "description"   : "Organ Grinder"
+                    },
+                    {
+                        "code"          : "078",
+                        "description"   : "Stringlike"
+                    },
+                    {
+                        "code"          : "283",
+                        "description"   : "Bypass"
+                    },
+                    {
+                        "code"          : "185",
+                        "description"   : "Frenetica"
+                    }
+                ]
+            };
+
+            let keys = Object.keys(patches);
+            keys.forEach(item => {
+        %>
+                <div class="is-size-3 has-text-white is-capitalized"><%= item %></div>
+                <div class="buttons">
+        <%        
+                    buttons = patches[item];
+                        buttons.forEach(element => {
+                            %><button class="button is-large is-dark is-outlined has-text-white is-responsive" style="width: 250px" onclick="change_patch('<%= element.code %>')"><%= element.description %></button><%
+                        })
+                %></div><%
+            });
+        %>
+                </div>
+            </div>
+        </main>
+        
+
+        <br/><br/><br/><br/><br/><br/><br/><br/>
+
+        <footer>
+            <%- include('../partials/footer'); %>
+        </footer>
+    </body>
+</html>
